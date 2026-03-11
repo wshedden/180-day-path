@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>180 Day Path</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>180 Day Path</h1>
+          <p class="subtitle">A calm neon tracker for your six-month journey.</p>
+        </div>
+        <div class="actions">
+          <button id="export-btn" class="ghost-btn">Export backup</button>
+          <label class="ghost-btn import-label" for="import-input">Import backup</label>
+          <input id="import-input" type="file" accept="application/json" hidden />
+        </div>
+      </header>
+
+      <section class="legend">
+        <span><i class="dot mood-green"></i>Good</span>
+        <span><i class="dot mood-yellow"></i>Neutral</span>
+        <span><i class="dot mood-red"></i>Difficult</span>
+      </section>
+
+      <section class="calendar-wrap">
+        <div id="weekday-header" class="weekday-header"></div>
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <section class="milestone-panel" id="milestone-panel"></section>
+    </div>
+
+    <dialog id="journal-modal" class="journal-modal">
+      <form id="journal-form" method="dialog">
+        <h2 id="journal-date"></h2>
+        <label for="journal-note">Journal note</label>
+        <textarea id="journal-note" maxlength="240" rows="4" placeholder="Write a short reflection..."></textarea>
+
+        <fieldset>
+          <legend>Mood</legend>
+          <div id="mood-options" class="mood-options"></div>
+        </fieldset>
+
+        <div class="modal-actions">
+          <button type="button" id="cancel-btn" class="ghost-btn">Cancel</button>
+          <button type="submit" class="solid-btn">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
