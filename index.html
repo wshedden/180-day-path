@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>180 Day Path</title>
+    <meta
+      name="description"
+      content="A calm neon journey tracker for a 180-day personal path starting March 9, 2026."
+    />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Personal Journey</p>
+          <h1>180-Day Path</h1>
+          <p class="subtitle">March 9, 2026 → September 4, 2026</p>
+        </div>
+        <div class="actions">
+          <button id="export-btn" class="btn">Export backup</button>
+          <label for="import-input" class="btn secondary">Import backup</label>
+          <input id="import-input" type="file" accept="application/json" hidden />
+        </div>
+      </header>
+
+      <section class="legend" aria-label="Mood legend">
+        <span><i class="dot mood-green"></i>Good</span>
+        <span><i class="dot mood-yellow"></i>Neutral</span>
+        <span><i class="dot mood-red"></i>Difficult</span>
+      </section>
+
+      <section class="weekday-row" aria-hidden="true">
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+        <span>Sun</span>
+      </section>
+
+      <section id="grid" class="grid" aria-label="180 day journey grid"></section>
+
+      <dialog id="journal-modal" class="modal">
+        <form id="journal-form" method="dialog" class="modal-card">
+          <div class="modal-head">
+            <h2 id="modal-date">Journal Entry</h2>
+            <button type="button" id="close-modal" class="icon-btn" aria-label="Close">
+              ✕
+            </button>
+          </div>
+
+          <label class="field">
+            <span>How did today feel?</span>
+            <div class="mood-options" id="mood-options"></div>
+          </label>
+
+          <label class="field">
+            <span>Note</span>
+            <textarea
+              id="journal-note"
+              maxlength="220"
+              placeholder="Write a short reflection..."
+              rows="4"
+            ></textarea>
+          </label>
+
+          <footer class="modal-actions">
+            <button type="submit" class="btn">Save</button>
+          </footer>
+        </form>
+      </dialog>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
